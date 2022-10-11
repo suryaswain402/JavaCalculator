@@ -1,8 +1,13 @@
-node{
-   stage('SCM checkout'){
-     git 'https://github.com/suryaswain402/my-stashjenkinsapp'
-   }
-   stage('Compile-package'){
-    sh 'mvn package'
-   }   
-}
+pipeline{
+   agent any
+       
+   stages{
+      
+      stage('git checkout'){
+       
+         steps{
+             git 'https://github.com/suryaswain402/JavaCalculator.git'    
+        } 
+       }
+     }
+    } 
