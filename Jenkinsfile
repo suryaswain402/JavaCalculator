@@ -8,6 +8,6 @@ pipeline{
          steps{
              git 'https://github.com/suryaswain402/JavaCalculator.git'    
         } 
-       }
-     }
-    } 
+      }
+    }
+  } 
