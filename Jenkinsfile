@@ -25,23 +25,24 @@ pipeline{
         }
 
        stage('maven build'){
-                       
+
           steps{
              sh 'mvn clean install'
           }
          }
 
-        stage('static code analysis'){
-   
+        stage('sonarqube analysis'){
+
            steps{
               scripts{
-               withSonarQubeEnv(credentialsId: 'sonar-api'){
-                 sh 'mvn clean package sonar:sonar'
-             }  
+              withSonarQubeEnv(credentialsId: 'sonar-api'){
+                sh 'mvn clean package sonar:sonar'
+             }
             }
-        }    
+        }
        }
 
     }
   }
- 
+
+
